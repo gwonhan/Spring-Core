@@ -5,7 +5,7 @@ public abstract class Product {
     private String name;
     private int price;
 
-    public Product(){}
+    public Product() {}
 
     public Product(String name, int price) {
         this.name = name;
@@ -26,5 +26,13 @@ public abstract class Product {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                '}';
     }
 }

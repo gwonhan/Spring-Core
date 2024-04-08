@@ -4,16 +4,13 @@ public class Beverage extends Product{
 
     private int capacity;
 
-    public Beverage(){}
+    public Beverage() {}
+
+
 
     public Beverage(String name, int price, int capacity) {
         super(name, price);
         this.capacity = capacity;
-    }
-
-    @Override
-    public String toString() {
-        return super.toString() + " " + this.capacity;
     }
 
     public int getCapacity() {
@@ -22,5 +19,10 @@ public class Beverage extends Product{
 
     public void setCapacity(int capacity) {
         this.capacity = capacity;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " " + this.capacity;
     }
 }

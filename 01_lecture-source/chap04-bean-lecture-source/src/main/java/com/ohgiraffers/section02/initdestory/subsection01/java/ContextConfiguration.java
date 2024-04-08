@@ -1,4 +1,4 @@
-package com.ohgiraffers.section01.scope.subsection01.singleton;
+package com.ohgiraffers.section02.initdestory.subsection01.java;
 
 import com.ohgiraffers.common.Beverage;
 import com.ohgiraffers.common.Bread;
@@ -28,13 +28,18 @@ public class ContextConfiguration {
         return new Beverage("삼다수", 50000, 500);
     }
 
-    /* 기본적인 스코프는 싱글톤!!!!
-    *   하나의 인스턴만을 생성을 하고, 모든 빈이 해당 인스턴스를 공유한다.
-    * */
+    /* prototype : getBean() 시에 매번 새로운 인스턴스를 생성하게 해준다. */
     @Bean
-//    @Scope("singleton")
+    @Scope("prototype")
     public ShoppingCart cart() {
         return new ShoppingCart();
+    }
+
+
+    @Bean(initMethod = "openShop", destroyMethod = "closeShop")
+    public Owner owner() {
+
+        return new Owner();
     }
 
 }
